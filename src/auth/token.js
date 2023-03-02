@@ -24,8 +24,23 @@ async function importPublicKey(publicKey) {
   return key;
 }
 
-async function generateJWT(privateKey, expiresIn) {
-  const jwt = await new jose.SignJWT(JWT_CLAIMS).setProtectedHeader({ alg: 'RS256' }).setIssuedAt().setIssuer(JWT_ISSUER).setAudience(JWT_AUDIENCE).setExpirationTime(expiresIn).sign(privateKey);
+async function generateJWT(privateKey, expiresIn, claims) {
+
+  let allClaims;
+
+  if (claims) {
+    allClaims = {
+      ...JWT_CLAIMS,
+      ...claims
+    }
+  } else {
+    allClaims = {
+      ...JWT_CLAIMS,
+      ...claims
+    }
+  }
+
+  const jwt = await new jose.SignJWT(allClaims).setProtectedHeader({ alg: 'RS256' }).setIssuedAt().setIssuer(JWT_ISSUER).setAudience(JWT_AUDIENCE).setExpirationTime(expiresIn).sign(privateKey);
 
   return jwt;
 }
