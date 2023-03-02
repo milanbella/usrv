@@ -1,0 +1,8 @@
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('bc55ea78-bdd2-40e0-8e41-a972c69e3b96','7991c1be-cb43-43bc-a389-210bf4aef8e0', '6f304175-2ea4-4405-ae52-2c5736d1614d');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('d49ca1cc-0ae6-4476-83f7-839608eb9955','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'c8a1242d-5082-4887-b561-4604e2d5ffc6');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('58e78599-cd8d-4698-b4e5-1822c596068f','7991c1be-cb43-43bc-a389-210bf4aef8e0', '815bb8c8-652c-4de0-a5d1-651ba14402a9');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('373075a7-b6f9-45b4-a597-baa3cab2aeb7','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'd7f8b91f-dee4-467d-8ac4-4819f6a7fa94');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('9f25b846-f40c-42aa-be35-3c45bf13b03d','2d5404e4-77f3-4726-a5ed-1f8b0744e526', '0e2d9034-781f-43a2-aca7-45c5985f8d2e');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('f967e81e-f0a2-49e6-9396-e2a514686cdc','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'f4bf02ff-e971-4079-ac0b-d4169752525f');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('b6463a8e-a943-405a-b846-80e2d06f64c4','2d5404e4-77f3-4726-a5ed-1f8b0744e526', '9cb07317-9a4f-4fc3-816e-dd866d6adfef');
+insert into kniznica_kniha (id, kniznica_id, kniha_id) value ('cf777e07-a833-4dc5-85f1-3247e5db3d06','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'cce89900-2682-4ce4-98a8-6fcc287c9e4f');

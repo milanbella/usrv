@@ -1,0 +1,1 @@
+insert into vypozicka (id, kniznica_id, student_id, kniha_id, datum_vypozicky, datum_vratenia) value ('5e1c1f27-e873-4220-b9a8-36f95c4a5904','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'bde492e7-1902-4e34-a304-6e740d6729b2', '6f304175-2ea4-4405-ae52-2c5736d1614d', '2023-02-17 16:00:00', null);

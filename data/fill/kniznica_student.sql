@@ -1,0 +1,8 @@
+insert into kniznica_student (id, kniznica_id, student_id) value ('c2e54bbf-0625-4b02-8a58-6b3bdecd4a9c','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'bde492e7-1902-4e34-a304-6e740d6729b2');
+insert into kniznica_student (id, kniznica_id, student_id) value ('646eb63e-d512-4eab-b879-d6b79fd3e44a','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'db2e4104-cdd2-4f27-abb6-a5be15a36003');
+insert into kniznica_student (id, kniznica_id, student_id) value ('6ece86d2-53cd-4bfb-a6e3-18da6b78c2d3','7991c1be-cb43-43bc-a389-210bf4aef8e0', 'ddfb64cc-a701-403c-8715-eef96ad34b23');
+insert into kniznica_student (id, kniznica_id, student_id) value ('d516b58f-66dd-4152-b968-d963a4bdb4ec','7991c1be-cb43-43bc-a389-210bf4aef8e0', '66f3a05d-130e-4193-aabd-af3506bd1305');
+insert into kniznica_student (id, kniznica_id, student_id) value ('048f7bfe-9220-4d9d-98bf-4ca4513b1d73','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'e9100ede-df10-4a35-bb32-726737778124');
+insert into kniznica_student (id, kniznica_id, student_id) value ('1e8820cc-12a4-4d68-a302-6ac43d0054d5','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'db2e4104-cdd2-4f27-abb6-a5be15a36003');
+insert into kniznica_student (id, kniznica_id, student_id) value ('1731d921-5959-46a8-b6e1-c7a6f48e66d3','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'ddfb64cc-a701-403c-8715-eef96ad34b23');
+insert into kniznica_student (id, kniznica_id, student_id) value ('9d4bbd60-ef9f-499e-92f6-a5b77d19891a','2d5404e4-77f3-4726-a5ed-1f8b0744e526', 'bde492e7-1902-4e34-a304-6e740d6729b2');

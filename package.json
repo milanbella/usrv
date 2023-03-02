@@ -1,0 +1,32 @@
+{
+    "name": "kniznica",
+    "version": "1.0.0",
+    "description": "kniznica",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha --recursive",
+        "prettier": "prettier --write ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VMMachal/Kniznica.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VMMachal/Kniznica/issues"
+    },
+    "homepage": "https://github.com/VMMachal/Kniznica#readme",
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2",
+        "jose": "^4.13.0",
+        "mariadb": "^3.1.0",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "chai": "^4.3.7",
+        "mocha": "^10.2.0",
+        "prettier": "2.8.4"
+    }
+}
