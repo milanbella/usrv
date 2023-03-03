@@ -99,5 +99,5 @@ function test_testPost(url) {
   });
 }
 
-test_testGet('/api');
-test_testPost('/api/kniznica/kniznicaCreate');
+test_testGet('/api/user');
+test_testPost('/api/user/userVerifyJwt');

@@ -1,6 +1,7 @@
 const express = require('express');
-const router = express.Router();
 const { router: routerUser } = require('./user');
+
+const router = express.Router();
 
 router.get('/', function (req, res) {
   res.json({massage: 'Hello from /api !'});

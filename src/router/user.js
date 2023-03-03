@@ -1,5 +1,7 @@
-const router = express.Router();
+const express = require('express');
 const { userVerifyPasswordAndIssueJwt, userVerifyJwt } = require('../business/user');
+
+const router = express.Router();
 
 const FILE = 'router/user.js';
 
@@ -65,7 +67,7 @@ router.post('/userVerifyJwt', async function(req, res) {
 
     let jwt = req.body.jwt;
     let applicationName = req.body.applicationName;
-    let password = req.body.password;
+    let userName = req.body.userName;
 
     if (!jwt) {
       console.warn(`${FILE}:${FUNC}: missing 'jwt'`);
@@ -73,7 +75,7 @@ router.post('/userVerifyJwt', async function(req, res) {
       res.end();
       return;
     }
-    if (!userName) {
+    if (!applicationName) {
       console.warn(`${FILE}:${FUNC}: missing 'applicationName'`);
       res.status(400);
       res.end();
