@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <h1 style="margin-bottom: 50px; margin-top: 30px;"> This Is The Test Api Page </h1>
+
+    <div style="width: 500px; border-radius: 25px; background: Gainsboro; padding: 10px; display: flex; flex-direction: column; align-items: center; margin-bottom: 40px">
+      <div id="testGet_url"></div>
+      <a id="testGet" href="#" style="margin-top: 15; margin-bottom: 15px">click to test GET</a>
+      <div id="testGet_result" href="#"></div>
+    </div>
+
+    <div style="width: 500px; border-radius: 25px; background: Gainsboro; padding: 10px; display: flex; flex-direction: column; align-items: center;">
+      <div id="testPost_url"></div>
+      <form id="testPost" style="display: flex; flex-direction: column; align-items: center;">
+        <textarea id="testPost_json" name="testPost_json" rows="4" cols="50" style="margin-top: 20px; margin-bottom: 20px"></textarea>
+        <button id="testPost_button" type="button">fill in some json and click to test POST</button>
+      </form>
+      <div id="testPost_result" href="#"></div>
+    </div>
+  </div>
+</body>
+<script src="js/test.js"></script>
+</html>

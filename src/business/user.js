@@ -78,7 +78,8 @@ async function userVerifyPasswordAndIssueJwt(applicationName, userName, password
         sparams = [applicationName];
         rows = await conn.query(sql, sparams); 
         if (rows.length < 1) {
-          throw new Error('no such application');
+          console.warn(`${FILE}:${FUNC}: no such application`);
+          return null;
         }
         let applicationId = rows[0].id;
 
@@ -104,18 +105,19 @@ async function userVerifyJwt(jwt, applicationName, userName) {
   try {
     let key = readKeyFromFs('certs/cert.pem');
     let publicKey = await importPublicKey(key);
-    let vresult = await verifyJWT(publicKey, publicKey);
+    let vresult = await verifyJWT(jwt, publicKey);
 
     if (vresult.payload.application !== applicationName) {
-      throw new Error("claim 'application' was not verified");  
+      console.warn(`${FILE}:${FUNC}: claim 'application' was not verified`);  
+      return null;
     }
     if (vresult.payload.user !== userName) {
-      throw new Error("claim 'user' was not verified");  
+      console.warn(`${FILE}:${FUNC}: claim 'user' was not verified`);  
+      return null;
     }
 
     return vresult;
 
-    return true;
   } catch(err) {
     console.error(`${FILE}:${FUNC}: error`, err);
     throw err;

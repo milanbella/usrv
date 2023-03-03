@@ -30,6 +30,10 @@ describe('user', function () {
       expect(user.username).to.be.equal('karol');
       expect(user.jwt.length).to.be.greaterThan(0);
 
-      await userVerifyJwt(user.jwt, 'kniznica-app', 'karol')
+      let vresult = await userVerifyJwt(user.jwt, 'kniznica-app', 'karol')
+      expect(vresult.payload).not.to.be.null;
+      expect(vresult.protectedHeader).not.to.be.null;
+      expect(vresult.payload.application).to.be.equal('kniznica-app');
+      expect(vresult.payload.user).to.be.equal('karol');
     });
 })
