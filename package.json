@@ -4,6 +4,7 @@
     "description": "kniznica",
     "main": "index.js",
     "scripts": {
+        "start": "node src/index.js",
         "test": "mocha --recursive",
         "prettier": "prettier --write ."
     },

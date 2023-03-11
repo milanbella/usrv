@@ -1,1 +1,1 @@
-insert into user (username,email,heslo,student_id) values ('karol','karol@karol.sk','xxxx', null);
+insert into user (username,email,heslo) values ('karol','karol@karol.sk','xxxx');

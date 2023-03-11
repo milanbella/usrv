@@ -51,7 +51,7 @@ async function issueJwt(claims) {
 }
 
 
-async function userVerifyPasswordAndIssueJwt(applicationName, userName, password) {
+async function userVerifyPasswordAndIssueJwt(applicationName, deviceId, userName, password) {
   const FUNC = 'userVerifyPasswordAndIssueJwt()';  
   let conn;
   let sql, sparams, rows;
@@ -69,10 +69,6 @@ async function userVerifyPasswordAndIssueJwt(applicationName, userName, password
       //attention this is not correct, we should store and compare encrypted password
       if (user.heslo === password) {
         delete user.heslo
-        user.jwt = await issueJwt({
-          'application': applicationName,
-          'user': userName,
-        });
 
         sql = 'select id from application where name = ?';
         sparams = [applicationName];
@@ -83,10 +79,20 @@ async function userVerifyPasswordAndIssueJwt(applicationName, userName, password
         }
         let applicationId = rows[0].id;
 
+        user.jwt = await issueJwt({
+          'application': applicationName,
+          'device': deviceId,
+          'user': userName,
+        });
+
         let id = uuidv4()
-        sql = 'insert into token(id, user_username, application_id, token, created_at) values(?, ?, ?, ?, CURRENT_TIMESTAMP)';
-        sparams = [id, userName, applicationId, user.jwt];
+        sql = 'insert into token(id, user_username, application_id, device_id, token, created_at) values(?, ?, ?, ?, ?, CURRENT_TIMESTAMP)';
+        sparams = [id, userName, applicationId, deviceId, user.jwt];
         await conn.query(sql, sparams);
+
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        console.log('@@@@@@@@@@@@@@@@@@@@@@@ cp 1500');
+        console.dir(user); //@@@@@@@@@@@@@@@@@@@
 
         return user;
       } else {
@@ -100,7 +106,7 @@ async function userVerifyPasswordAndIssueJwt(applicationName, userName, password
   }
 }
 
-async function userVerifyJwt(jwt, applicationName, userName) {
+async function userVerifyJwt(jwt, applicationName, deviceId, userName) {
   const FUNC = 'verifyJwt()';
   try {
     let key = readKeyFromFs('certs/cert.pem');
@@ -109,6 +115,10 @@ async function userVerifyJwt(jwt, applicationName, userName) {
 
     if (vresult.payload.application !== applicationName) {
       console.warn(`${FILE}:${FUNC}: claim 'application' was not verified`);  
+      return null;
+    }
+    if (vresult.payload.device !== deviceId) {
+      console.warn(`${FILE}:${FUNC}: claim 'device' was not verified`);  
       return null;
     }
     if (vresult.payload.user !== userName) {

@@ -38,7 +38,6 @@ async function tryIfDatabaseConnectionIsWorking() {
     try {
         conn = await getConnection()
         const rows = await conn.query('SELECT 1 as val')
-        const res = await conn.query('select * from kniznica', [])
     } finally {
         closeConnection(conn)
     }

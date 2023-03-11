@@ -17,11 +17,18 @@ router.post('/userVerifyPasswordAndIssueJwt', async function(req, res) {
   try {
 
     let applicationName = req.body.applicationName;
+    let deviceId = req.body.deviceId;
     let userName = req.body.userName;
     let password = req.body.password;
 
     if (!applicationName) {
       console.warn(`${FILE}:${FUNC}: missing 'applicationName'`);
+      res.status(400);
+      res.end();
+      return;
+    }
+    if (!deviceId) {
+      console.warn(`${FILE}:${FUNC}: missing 'deviceId'`);
       res.status(400);
       res.end();
       return;
@@ -39,7 +46,8 @@ router.post('/userVerifyPasswordAndIssueJwt', async function(req, res) {
       return;
     }
 
-    let user = await userVerifyPasswordAndIssueJwt(applicationName, userName, password);
+    let user = await userVerifyPasswordAndIssueJwt(applicationName, deviceId, userName, password);
+
 
     if (user !== null) {
       res.status(200);
@@ -81,6 +89,12 @@ router.post('/userVerifyJwt', async function(req, res) {
       res.end();
       return;
     }
+    if (!deviceId) {
+      console.warn(`${FILE}:${FUNC}: missing 'deviceId'`);
+      res.status(400);
+      res.end();
+      return;
+    }
     if (!userName) {
       console.warn(`${FILE}:${FUNC}: missing 'userName'`);
       res.status(400);
@@ -88,7 +102,7 @@ router.post('/userVerifyJwt', async function(req, res) {
       return;
     }
 
-    let vresult = await userVerifyJwt(jwt, applicationName, userName)
+    let vresult = await userVerifyJwt(jwt, applicationName, deviceId, userName)
 
     if (vresult !== null) {
       res.status(200);
