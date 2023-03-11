@@ -16,12 +16,16 @@ router.post('/userVerifyPasswordAndIssueJwt', async function(req, res) {
   const FUNC = 'post(/userVerifyPasswordAndIssueJwt)';
   try {
 
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@ cp 5000');
+    console.dir(req.body); //@@@@@@@@@@@@@@@@@@@
+
     let applicationName = req.body.applicationName;
     let deviceId = req.body.deviceId;
     let userName = req.body.userName;
     let password = req.body.password;
 
     if (!applicationName) {
+      console.log(`@@@@@@@@@@@@@@@@@@@@@@@@@@@ cp 5010: applicationName: ${applicationName}`);
       console.warn(`${FILE}:${FUNC}: missing 'applicationName'`);
       res.status(400);
       res.end();
